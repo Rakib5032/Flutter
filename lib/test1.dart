@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:test_project2/main.dart';
 
 void main(){
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget{
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,6 +17,8 @@ class MyApp extends StatelessWidget{
 }
 
 class HomeScreen extends StatelessWidget{
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,6 +30,8 @@ class HomeScreen extends StatelessWidget{
 }
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
+  const CustomAppBar({super.key});
+
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -49,6 +54,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
 }
 
 class CustomBody extends StatelessWidget {
+  const CustomBody({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Center(
