@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-void main(){
-  runApp(MyApp());
+void main() {
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -17,63 +17,105 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             backgroundColor: Colors.green,
             centerTitle: true,
-            title: Text("Hello Bangladesh", style: TextStyle(
-              fontSize: 24,
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),),
-            bottom: TabBar(
-                tabs: [
-                  Tab(icon: Icon(Icons.directions_bike, size: 50,),),
-                  Tab(icon: Icon(Icons.directions_car, size: 50,),),
-                  Tab(icon: Icon(Icons.directions_train, size: 50,),),
-                ]),
+            title: const Text(
+              "Hello Bangladesh",
+              style: TextStyle(
+                fontSize: 24,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            bottom: const TabBar(
+              tabs: [
+                Tab(icon: Icon(Icons.directions_bike, size: 50)),
+                Tab(icon: Icon(Icons.directions_car, size: 50)),
+                Tab(icon: Icon(Icons.directions_train, size: 50)),
+              ],
+            ),
           ),
           drawer: Drawer(
             child: ListView(
               children: [
-                DrawerHeader(decoration: BoxDecoration(color: Colors.greenAccent),
-                child: Center(
-                  child: Text("Drawer", style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 50,
-                    color: Colors.red,
-                  ),),
-                ),
+                const DrawerHeader(
+                  decoration: BoxDecoration(color: Colors.greenAccent),
+                  child: Center(
+                    child: Text(
+                      "Drawer",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 50,
+                        color: Colors.red,
+                      ),
+                    ),
+                  ),
                 ),
                 ListTile(
-                  leading: Icon(Icons.home),
-                  title: Text("HOME"),
+                  leading: const Icon(Icons.home),
+                  title: const Text("HOME"),
                   onTap: () {
                     Navigator.pop(context);
                   },
                 ),
                 ListTile(
-                  leading: Icon(Icons.add),
-                  title: Text("Add"),
-                  onTap: () {
-
-                  },
+                  leading: const Icon(Icons.add),
+                  title: const Text("Add"),
+                  onTap: () {},
                 ),
                 ListTile(
-                  leading: Icon(Icons.email_outlined),
-                  title: Text("Email"),
-                  onTap: (){
-
-                  },
+                  leading: const Icon(Icons.email_outlined),
+                  title: const Text("Email"),
+                  onTap: () {},
                 )
               ],
             ),
           ),
-
-
-          body: TabBarView(
-              children: [
-                Icon(Icons.directions_bike, size: 100,),
-                Icon(Icons.directions_car, size: 100,),
-                Icon(Icons.directions_train, size: 100,),
-              ]),
-
+          body: Column(
+            children: [
+              // const Expanded(
+              //   child: TabBarView(
+              //     children: [
+              //       Center(child: Icon(Icons.directions_bike, size: 100)),
+              //       Center(child: Icon(Icons.directions_car, size: 100)),
+              //       Center(child: Icon(Icons.directions_train, size: 100)),
+              //     ],
+              //   ),
+              // ),
+              Container(
+                margin: const EdgeInsets.all(10),
+                height: 100,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.green,
+                  border: Border.all(color: Colors.black, width: 2),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: const Center(
+                  child: Text(
+                    "This is a Container",
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.all(10),
+                height: 100,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.green,
+                  border: Border.all(color: Colors.black, width: 2),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Image.network(
+                  "https://media.licdn.com/dms/image/v2/D4E12AQHzcOycupARqw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1676289823357?e=2147483647&v=beta&t=OM29XPrYg1t4w8QNkEpASGEZJ-F76qbJe-xiF7QStec",
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ],
+          ),
           bottomNavigationBar: BottomNavigationBar(
             items: const [
               BottomNavigationBarItem(
@@ -94,7 +136,4 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
-}
-
-class _onItemTapped {
 }

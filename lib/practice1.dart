@@ -90,11 +90,13 @@ class HomeScreen extends StatelessWidget {
                     topLeft: Radius.circular(16),
                     bottomRight: Radius.circular(16),
                   ),
+                  image: DecorationImage(
+                      image: NetworkImage("https://picsum.photos/200/300"),fit: BoxFit.cover),
                 ),
+                alignment: Alignment.center,
                 child: Text("World", style: TextStyle(
                   color: Colors.black87, fontSize: 32,
                 ),),
-                alignment: Alignment.center,
               ),
             ),
 

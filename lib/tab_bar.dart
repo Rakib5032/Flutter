@@ -24,13 +24,13 @@ class MyApp extends StatelessWidget {
               ],
             ),
           ),
-          body: const TabBarView(
-            children: [
-              Icon(Icons.directions_car),    // Content for the first tab
-              Icon(Icons.directions_transit),  // Content for the second tab
-              Icon(Icons.directions_bike),    // Content for the third tab
-            ],
-          ),
+          // body: const TabBarView(
+          //   children: [
+          //     Icon(Icons.directions_car),    // Content for the first tab
+          //     Icon(Icons.directions_transit),  // Content for the second tab
+          //     Icon(Icons.directions_bike),    // Content for the third tab
+          //   ],
+          // ),
         ),
       ),
     );
