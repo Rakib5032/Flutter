@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main(){
+void main() {
   runApp(MyApp());
 }
 
@@ -26,16 +26,26 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.blue,
-        title: Text("This is Practice", style: TextStyle(
-          fontSize: 32, fontWeight: FontWeight.bold,
-        ),),
+        title: Text(
+          "This is Practice",
+          style: TextStyle(
+            fontSize: 32,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
       drawer: Drawer(
         child: ListView(
           children: [
-            DrawerHeader(child: Text("Edit Profile", style: TextStyle(
-              color: Colors.black87, fontSize: 32, fontWeight: FontWeight.bold,
-            ),)),
+            DrawerHeader(
+                child: Text(
+              "Edit Profile",
+              style: TextStyle(
+                color: Colors.black87,
+                fontSize: 32,
+                fontWeight: FontWeight.bold,
+              ),
+            )),
             ListTile(
               leading: Icon(Icons.home),
               title: Text("Home"),
@@ -54,7 +64,6 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-      
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -65,18 +74,20 @@ class HomeScreen extends StatelessWidget {
               margin: EdgeInsets.all(16),
               padding: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
               decoration: BoxDecoration(
-                color: Colors.amber,
-                border: Border.all(color: Colors.black87, width: 2),
-                // borderRadius: BorderRadius.circular(10),
-                borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(16),
-                  bottomLeft: Radius.circular(16),
-                )
-              ),
+                  color: Colors.amber,
+                  border: Border.all(color: Colors.black87, width: 2),
+                  // borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(16),
+                    bottomLeft: Radius.circular(16),
+                  )),
               alignment: Alignment.center,
-              child: Text("Hello", style: TextStyle(
-                fontSize: 24,
-              ),),
+              child: Text(
+                "Hello",
+                style: TextStyle(
+                  fontSize: 24,
+                ),
+              ),
             ),
             Center(
               child: Container(
@@ -91,27 +102,32 @@ class HomeScreen extends StatelessWidget {
                     bottomRight: Radius.circular(16),
                   ),
                   image: DecorationImage(
-                      image: NetworkImage("https://picsum.photos/200/300"),fit: BoxFit.cover),
+                      image: NetworkImage("https://picsum.photos/200/300"),
+                      fit: BoxFit.cover),
                 ),
                 alignment: Alignment.center,
-                child: Text("World", style: TextStyle(
-                  color: Colors.black87, fontSize: 32,
-                ),),
+                child: Text(
+                  "World",
+                  style: TextStyle(
+                    color: Colors.black87,
+                    fontSize: 32,
+                  ),
+                ),
               ),
             ),
-
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.greenAccent,
-                  textStyle: TextStyle(
-                    fontSize: 32, fontStyle: FontStyle.italic,
-                  )
-                ),
-                  onPressed: (){
-                  print("send");
-                  }, child: Text("Send")),
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.greenAccent,
+                      textStyle: TextStyle(
+                        fontSize: 32,
+                        fontStyle: FontStyle.italic,
+                      )),
+                  onPressed: () {
+                    print("send");
+                  },
+                  child: Text("Send")),
             ),
             TextButton(onPressed: () {}, child: Text("User")),
             IconButton(onPressed: () {}, icon: Icon(Icons.search)),
@@ -122,13 +138,14 @@ class HomeScreen extends StatelessWidget {
               decoration: InputDecoration(
                 fillColor: Colors.blue,
                 filled: true,
-                suffixIcon: Icon(Icons.email_outlined, color: Colors.white70,),
+                suffixIcon: Icon(
+                  Icons.email_outlined,
+                  color: Colors.white70,
+                ),
                 label: Text("Email Address"),
-                labelStyle: TextStyle(
-                    color: Colors.white70,fontSize: 20),
+                labelStyle: TextStyle(color: Colors.white70, fontSize: 20),
                 hintText: "Enter your Email",
-                hintStyle: TextStyle(
-                    color: Colors.white70, fontSize: 16),
+                hintStyle: TextStyle(color: Colors.white70, fontSize: 16),
               ),
             ),
             SizedBox(
@@ -141,18 +158,22 @@ class HomeScreen extends StatelessWidget {
                   color: Colors.black87,
                 ),
                 decoration: InputDecoration(
-                  fillColor: Colors.blue,
-                  filled: true,
-                  suffixIcon: Icon(Icons.password_outlined, color: Colors.white70,),
-                  label: Text("Password"),
-                  labelStyle: TextStyle(
-                    color: Colors.white70, fontSize: 20,
-                  ),
-                  hintText: "Enter your Password",
-                  hintStyle: TextStyle(
-                    color: Colors.white70, fontSize: 16,
-                  )
-                ),
+                    fillColor: Colors.blue,
+                    filled: true,
+                    suffixIcon: Icon(
+                      Icons.password_outlined,
+                      color: Colors.white70,
+                    ),
+                    label: Text("Password"),
+                    labelStyle: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 20,
+                    ),
+                    hintText: "Enter your Password",
+                    hintStyle: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 16,
+                    )),
               ),
             )
           ],

@@ -25,7 +25,6 @@ class HomeScreen extends StatefulWidget {
   }
 }
 
-
 // class HomeScreen extends StatefulWidget {
 //   @override
 //   _HomeScreenState createState() => _HomeScreenState();
@@ -45,9 +44,9 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(title: Text("Bottom Navigation")),
       body: Center(
-        // child: Text("Selected Tab: $_selectedIndex",
-        //     style: TextStyle(fontSize: 24)),
-      ),
+          // child: Text("Selected Tab: $_selectedIndex",
+          //     style: TextStyle(fontSize: 24)),
+          ),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),

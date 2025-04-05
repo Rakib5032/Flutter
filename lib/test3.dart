@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
-void main(){
+void main() {
   runApp(MyApp());
 }
 
-class  MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +14,7 @@ class  MyApp extends StatelessWidget {
     );
   }
 }
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -24,9 +24,13 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
         centerTitle: true,
-        title: Text("Home", style: TextStyle(
-          fontSize: 32, fontWeight: FontWeight.bold,
-        ),),
+        title: Text(
+          "Home",
+          style: TextStyle(
+            fontSize: 32,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         iconTheme: IconThemeData(
           color: Colors.red,
         ),
@@ -43,26 +47,28 @@ class HomeScreen extends StatelessWidget {
         child: ListView(
           children: [
             DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.amber,
-              ),
+                decoration: BoxDecoration(
+                  color: Colors.amber,
+                ),
                 child: Center(
-                  child: Text("Drawer",
+                  child: Text(
+                    "Drawer",
                     style: TextStyle(
-                      color: Colors.green, fontWeight: FontWeight.bold, fontSize: 32,
+                      color: Colors.green,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 32,
                     ),
                   ),
-                )
-            ),
+                )),
             ListTile(
               leading: Icon(Icons.person),
               title: Text("Profile"),
-              onTap: (){},
+              onTap: () {},
             ),
             ListTile(
               leading: Icon(Icons.settings),
               title: Text("Settings"),
-              onTap: (){},
+              onTap: () {},
             ),
             ListTile(
               leading: Icon(Icons.logout),
@@ -75,16 +81,21 @@ class HomeScreen extends StatelessWidget {
         children: [
           Container(
             margin: EdgeInsets.fromLTRB(10, 20, 10, 10),
-            height: 100, width: double.infinity,
+            height: 100,
+            width: double.infinity,
             decoration: BoxDecoration(
               color: Colors.green,
               border: Border.all(color: Colors.pink),
               borderRadius: BorderRadius.circular(10),
             ),
             child: Center(
-              child: Text("Hello", style: TextStyle(
-                color: Colors.purple, fontSize: 32,
-              ),),
+              child: Text(
+                "Hello",
+                style: TextStyle(
+                  color: Colors.purple,
+                  fontSize: 32,
+                ),
+              ),
             ),
           ),
           SizedBox(
@@ -101,7 +112,8 @@ class HomeScreen extends StatelessWidget {
                 ),
                 // child: Image.asset("assets/IMG_20180517_183741.jpg"),
 
-                child: Image.network("https://media.licdn.com/dms/image/v2/D4E12AQHzcOycupARqw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1676289823357?e=2147483647&v=beta&t=OM29XPrYg1t4w8QNkEpASGEZJ-F76qbJe-xiF7QStec"),
+                child: Image.network(
+                    "https://media.licdn.com/dms/image/v2/D4E12AQHzcOycupARqw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1676289823357?e=2147483647&v=beta&t=OM29XPrYg1t4w8QNkEpASGEZJ-F76qbJe-xiF7QStec"),
               ),
             ],
           )
@@ -122,5 +134,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-

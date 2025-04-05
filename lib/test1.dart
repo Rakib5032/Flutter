@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-void main(){
+void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget{
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget{
   }
 }
 
-class HomeScreen extends StatelessWidget{
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget{
   }
 }
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({super.key});
 
   @override
@@ -37,10 +37,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
     return AppBar(
       backgroundColor: Colors.purple,
       centerTitle: true,
-      title: Text("Hello Rakib", style: TextStyle(
-        fontSize: 45,
-        fontWeight: FontWeight.bold,
-      ),),
+      title: Text(
+        "Hello Rakib",
+        style: TextStyle(
+          fontSize: 45,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
       leading: Icon(
         Icons.home,
         color: Colors.amber,
@@ -59,11 +62,13 @@ class CustomBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text("Hello Sadia Tomi dao kadia", style: TextStyle(
-        fontWeight: FontWeight.bold,
-        fontSize: 30,
-      ),),
+      child: Text(
+        "Hello Sadia Tomi dao kadia",
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 30,
+        ),
+      ),
     );
   }
- 
 }

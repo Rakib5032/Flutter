@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-
 void main() {
   runApp(MyApp());
 }
 
-class MyApp  extends StatelessWidget {
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
@@ -17,9 +16,8 @@ class MyApp  extends StatelessWidget {
   }
 }
 
-class HomeScreen  extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-
 
   @override
   Widget build(BuildContext context) {
@@ -27,16 +25,23 @@ class HomeScreen  extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.blue,
         centerTitle: true,
-        title: Text("Hello", style: TextStyle(
-          color: Colors.amber,
-        ),),
-    ),
+        title: Text(
+          "Hello",
+          style: TextStyle(
+            color: Colors.amber,
+          ),
+        ),
+      ),
       drawer: Drawer(
         child: ListView(
           children: [
-            DrawerHeader(child: Text("Nevigation", style: TextStyle(
-              // color: Colors.blue,
-            ),),
+            DrawerHeader(
+              child: Text(
+                "Nevigation",
+                style: TextStyle(
+                    // color: Colors.blue,
+                    ),
+              ),
             ),
             ListTile(
               leading: const Icon(Icons.home),

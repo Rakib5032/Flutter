@@ -12,15 +12,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: DefaultTabController(
-        length: 3,  // Number of tabs
+        length: 3, // Number of tabs
         child: Scaffold(
           appBar: AppBar(
             title: Text('TabBar Example'),
             bottom: const TabBar(
               tabs: [
-                Tab(icon: Icon(Icons.directions_car)),   // First tab
-                Tab(icon: Icon(Icons.directions_transit)),  // Second tab
-                Tab(icon: Icon(Icons.directions_bike)),   // Third tab
+                Tab(icon: Icon(Icons.directions_car)), // First tab
+                Tab(icon: Icon(Icons.directions_transit)), // Second tab
+                Tab(icon: Icon(Icons.directions_bike)), // Third tab
               ],
             ),
           ),

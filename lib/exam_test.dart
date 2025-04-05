@@ -114,10 +114,12 @@ class MyApp extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              FloatingActionButton(onPressed: (){
-                print("Button Pressed ");
-              },
-              child: Icon(Icons.add),),
+              FloatingActionButton(
+                onPressed: () {
+                  print("Button Pressed ");
+                },
+                child: Icon(Icons.add),
+              ),
             ],
           ),
           bottomNavigationBar: BottomNavigationBar(
