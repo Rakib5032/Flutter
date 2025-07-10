@@ -22,6 +22,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text("Theming"),
         backgroundColor: Colors.blue,
+        leading: Icon(Icons.person),
         centerTitle: true,
       ),
       body: Column(
