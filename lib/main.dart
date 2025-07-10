@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  // takes some widget
   runApp(MyApp());
 }
 
@@ -10,118 +9,113 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
-    );
+    return MaterialApp(home: HomeScreen());
   }
 }
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-  // const Homescreen({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Theming"),
+        backgroundColor: Colors.blue,
+        centerTitle: true,
+      ),
+      body: Column(
+        children: [
+          TextButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProductList()),
+              );
+            },
+            child: Text("Press me"),
+          ),
+          Center(
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProductList()),
+                );
+              },
+              child: Text("Press me"),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class ProductList extends StatelessWidget {
+  const ProductList({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: Text(
-          "Hello",
-          style: TextStyle(
-              color: Colors.red, fontSize: 32, fontWeight: FontWeight.bold),
-        ),
+        title: Text("Product List"),
         centerTitle: true,
+        backgroundColor: Colors.amberAccent,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.pink,
-                    textStyle: TextStyle(
-                      fontSize: 40,
-                      fontWeight: FontWeight.w400,
-                    )),
-                onLongPress: () {
-                  print("Long Presss");
-                },
-                onPressed: () {
-                  print("Button  Pressed");
-                },
-                child: Text("Send")),
-            TextButton(
-                style: TextButton.styleFrom(
-                    foregroundColor: Colors.amber,
-                    textStyle: TextStyle(
-                      fontSize: 24,
-                    )),
-                onLongPress: () {},
-                onPressed: () {
-                  print("Resend");
-                },
-                child: Text("Resend")),
-            IconButton(
-                style: IconButton.styleFrom(
-                  backgroundColor: Colors.amberAccent,
-                  foregroundColor: Colors.pink,
+      body: ListView.builder(
+        itemCount: 20,
+        itemBuilder: (context, index) {
+          return ListTile(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      ProductDetails(productName: index.toString()),
                 ),
-                onPressed: () {},
-                icon: Icon(Icons.add)),
-            OutlinedButton(
-                style: OutlinedButton.styleFrom(
-                  backgroundColor: Colors.amberAccent,
-                ),
-                onPressed: () {},
-                child: Text("OutLine Button")),
-            TextField(
-              style: TextStyle(
-                color: Colors.white,
-              ),
-              decoration: InputDecoration(
-                  fillColor: Colors.blue,
-                  filled: true,
-                  hintText: "Enter your Name",
-                  hintStyle: TextStyle(
-                    color: Colors.white70,
-                  ),
-                  suffixIcon: Icon(
-                    Icons.email_outlined,
-                    color: Colors.white,
-                  ),
-                  label: Text("Email Address"),
-                  labelStyle: TextStyle(
-                    color: Colors.white70,
-                  )),
+              ).then((value) {
+                print(value);
+              });
+            },
+            title: Text(index.toString()),
+            subtitle: Text("Product Details"),
+          );
+        },
+      ),
+    );
+  }
+}
+
+class ProductDetails extends StatefulWidget {
+  final String productName;
+  const ProductDetails({super.key, required this.productName});
+
+  @override
+  State<ProductDetails> createState() => _ProductDetailsState();
+}
+
+class _ProductDetailsState extends State<ProductDetails> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Product Details")),
+      backgroundColor: Colors.cyan,
+      body: Column(
+        children: [
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context, 'this ${widget.productName}');
+            },
+            child: Text(
+              "Back",
+              style: TextStyle(color: Colors.black, fontSize: 24),
             ),
-            SizedBox(
-              height: 10,
-            ),
-            TextField(
-              obscureText: true,
-              style: TextStyle(
-                color: Colors.white70,
-              ),
-              decoration: InputDecoration(
-                  fillColor: Colors.blue,
-                  filled: true,
-                  hintText: "Enter your password",
-                  hintStyle: TextStyle(
-                    color: Colors.white70,
-                  ),
-                  suffixIcon: Icon(
-                    Icons.password_outlined,
-                    color: Colors.white70,
-                  ),
-                  label: Text("Password"),
-                  labelStyle: TextStyle(
-                    color: Colors.white70,
-                  )),
-            ),
-          ],
-        ),
+          ),
+          Center(
+            child: Text(widget.productName, style: TextStyle(fontSize: 32)),
+          ),
+        ],
       ),
     );
   }

@@ -1,4 +1,4 @@
-# o_flutter1
+# o_flutter
 
 A new Flutter project.
 

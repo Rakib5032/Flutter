@@ -1,6 +1,6 @@
 {
-    "name": "o_flutter1",
-    "short_name": "o_flutter1",
+    "name": "o_flutter",
+    "short_name": "o_flutter",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
