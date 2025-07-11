@@ -46,11 +46,26 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Home"), backgroundColor: Colors.blue),
-      body: Center(
-        child: Text(
-          counter.toString(),
-          style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-        ),
+      body: Column(
+        children: [
+          Center(
+            child: Text(
+              counter.toString(),
+              style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Profile(userName: 'Rakib'),
+                ),
+              );
+            },
+            child: Text("Profile", style: TextStyle(color: Colors.red)),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -64,6 +79,24 @@ class _HomeScreenState extends State<HomeScreen> {
         },
         child: Icon(Icons.add),
       ),
+    );
+  }
+}
+
+class Profile extends StatefulWidget {
+  final String userName;
+  const Profile({super.key, required this.userName});
+
+  @override
+  State<Profile> createState() => _ProfileState();
+}
+
+class _ProfileState extends State<Profile> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Profile")),
+      body: Center(child: Text(widget.userName)),
     );
   }
 }
