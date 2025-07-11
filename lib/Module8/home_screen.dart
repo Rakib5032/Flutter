@@ -29,16 +29,32 @@ class HomeScreen extends StatelessWidget {
       body: LayoutBuilder(
         builder: (context, constrains) {
           print(constrains.maxHeight);
-          if (constrains.maxHeight > 500) {
+          if (constrains.maxWidth > 500) {
             return Center(child: Text("Too big screen"));
           } else {
             return Center(
               child: OrientationBuilder(
                 builder: (context, orientation) {
-                  return Text(
-                    orientation == Orientation.portrait
-                        ? 'Portrait'
-                        : 'Landscape',
+                  return Column(
+                    children: [
+                      Text(
+                        orientation == Orientation.portrait
+                            ? 'Portrait'
+                            : 'Landscape',
+                      ),
+                      Wrap(
+                        alignment: WrapAlignment.center,
+                        crossAxisAlignment: WrapCrossAlignment.start,
+                        children: [
+                          Text("Helllo how are you"),
+                          Text("asdfas asdf asd sadf af asH"),
+                          Text(
+                            "fasda asd asd f asf afas asd asdsdfa sdfads adfasdf asd  aH afDas SOIFH as IasdfF HDSOIF H",
+                          ),
+                          Text("HLDf aSfaOas f aasd  ad sOIFa H IF HDSOIF H"),
+                        ],
+                      ),
+                    ],
                   );
                 },
               ),
