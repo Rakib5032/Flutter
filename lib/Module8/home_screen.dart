@@ -26,17 +26,25 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Colors.cyan,
         title: Text("Home", style: TextStyle(color: Colors.yellow)),
       ),
-      body: Center(
-        // child: Text(
-        //   orientation == Orientation.portrait ? 'Portrait' : 'Landscape',
-        // ),
-        child: OrientationBuilder(
-          builder: (context, orientation) {
-            return Text(
-              orientation == Orientation.portrait ? 'Protrait' : 'Landscape',
+      body: LayoutBuilder(
+        builder: (context, constrains) {
+          print(constrains.maxHeight);
+          if (constrains.maxHeight > 500) {
+            return Center(child: Text("Too big screen"));
+          } else {
+            return Center(
+              child: OrientationBuilder(
+                builder: (context, orientation) {
+                  return Text(
+                    orientation == Orientation.portrait
+                        ? 'Portrait'
+                        : 'Landscape',
+                  );
+                },
+              ),
             );
-          },
-        ),
+          }
+        },
       ),
     );
   }
